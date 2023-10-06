@@ -1,0 +1,242 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gilda Display', serif;
+    color: #000;
+    font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    display: block;
+}
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #ccff32;
+    padding: 10px;
+}
+
+.header__logo {
+    font-family: 'Climate Crisis', cursive;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #000;
+    padding: 10px;
+}
+
+.header a {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.header__navbar {
+    display: flex;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    justify-content: space-between;
+    margin-top: 15px;
+
+}
+
+.header__navbar_about {
+    padding: 10px;
+
+}
+
+.header__navbar_cart {
+    padding: 10px;
+    margin-right: 135px;
+}
+
+.header__navbar_account {
+    padding: 10px;
+}
+
+.header__navbar a:hover {
+    /*color: #ff69b4;*/
+    color: #EC9192;
+    transition: 0.2s;
+}
+
+.header__logo a {
+    transition: 0.2s;
+}
+
+.header__logo a:hover {
+    color: #EC9192;
+    transform: scale(1.1);
+}
+
+/* Main */
+
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.main__navbar {
+    background: linear-gradient(to bottom, #ccff32, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__navbar a {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+.main__navbar a:hover {
+    color: #EC9192;
+    transition: 0.2s;
+}
+
+.main__grid-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+
+.main__grid-list_item img {
+    width: auto;
+    height: 300px;
+    padding: 10px;
+}
+
+.main__grid-list_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.main__grid-list_item h3 {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px;
+    justify-content: space-between;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+}
+
+.main__grid-list_item p {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    align-items: center;
+    horiz-align: center;
+    justify-content: space-between;
+    background-color: #ccff32;
+    padding: 10px;
+}
+
+.footer__gradient {
+    background: linear-gradient(to top, #ccff32, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+}
+
+.footer__social {
+    display: grid;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer__social a {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 2px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.footer__social a:hover {
+    color: #EC9192;
+    transition: 0.2s;
+}
+
+
+.footer__newsletter {
+    padding: 5px;
+    margin-left: 140px;
+}
+
+.footer__newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__newsletter input {
+    margin-bottom: 10px;
+}
+
+.footer__newsletter input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.footer__newsletter input[type="submit"] {
+    background-color: #EC9192;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer__newsletter input[type="submit"]:hover {
+    background-color: #000;
+    transition: background-color 0.3s;
+}
+
+.footer__info {
+    display: grid;
+    padding: 10px;
+}
+
+.footer__info a {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 2px;
+    font-weight: 400;
+}
+
+.footer__info a:hover {
+    color: #EC9192;
+    transition: 0.2s;
+}
