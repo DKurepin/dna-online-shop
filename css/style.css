@@ -19,6 +19,7 @@
     .main__grid-list_item img {
         width: 50%;
         height: auto;
+        position: relative;
     }
 
     .footer__newsletter {
@@ -114,6 +115,11 @@ ul, li {
 
 /* Header */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     display: flex;
     align-items: center;
     background-color: #ccff32;
@@ -182,6 +188,7 @@ ul, li {
 }
 
 .main__navbar {
+    margin-top: 95px;
     background: linear-gradient(to bottom, #ccff32, #fff);
     display: flex;
     align-items: center;
@@ -245,6 +252,32 @@ ul, li {
     font-weight: 300;
     margin: 10px;
 }
+/* Применить стиль к каждой нечетной строке таблицы */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+tr {
+    border: 1px solid #000;
+}
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Применить стиль к каждой четной строке таблицы */
+tr:nth-child(even) {
+    background-color: #ccff32;
+}
+
+/* Применить стиль к первой ячейке каждой строки таблицы */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Применить стиль к последней ячейке каждой строки таблицы */
+td:last-child {
+    text-align: right;
+}
 
 /* Footer */
 
@@ -255,6 +288,7 @@ ul, li {
     justify-content: space-between;
     background-color: #ccff32;
     padding: 10px;
+    height: auto;
 }
 
 .footer__gradient {
