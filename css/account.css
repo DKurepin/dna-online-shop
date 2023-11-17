@@ -11,17 +11,6 @@
         display: none;
     }
 
-    .main__grid-list_item {
-        width: 50%;
-        height: auto;
-    }
-
-    .main__grid-list_item img {
-        width: 50%;
-        height: auto;
-        position: relative;
-    }
-
     .footer__newsletter {
         margin-left: 0;
         margin-right: 0;
@@ -104,6 +93,7 @@ body {
     color: #000;
     font-size: 16px;
 }
+
 h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin: 0;
@@ -112,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 ul, li {
     display: block;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -141,10 +132,11 @@ html {
     color: #000000;
 }
 
-/*a:is(:link, :active, :visited).active {*/
-/*    color: #EC9192;*/
-/*    transition: 0.2s;*/
-/*}*/
+
+a:is(:link, :active, :visited).active {
+    color: #EC9192;
+    transition: 0.2s;
+}
 
 /* Header */
 .header {
@@ -217,122 +209,94 @@ html {
 
 .main {
     min-height: 100%;
-    display: flex;
-    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-.main__navbar {
+.main__gradient {
     margin-top: 95px;
+    padding: 20px;
+    width: 100%;
     background: linear-gradient(to bottom, #ccff32, #fff);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.main__navbar a {
-    color: #000;
-    font-size: 20px;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px;
-}
-
-.main__navbar a:hover {
-    color: #EC9192;
-    transition: 0.2s;
-}
-
-.main__grid-list {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-}
-
-.main__grid-list_item img {
-    width: auto;
-    height: 300px;
-    padding: 10px;
-}
-
-.main__grid-list_item {
-    flex: 1;
+.main__account-block{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    height: 400px;
+    margin: 20px;
     background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    padding: 20px;
 }
 
-.main__grid-list_item h3 {
-    flex: 1;
-    font-size: 18px;
-    font-weight: 400;
-    padding: 5px;
-    justify-content: space-between;
+
+.main__account-block h2 {
     text-align: center;
-    color: #000;
-    text-decoration: none;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
-.main__grid-list_item p {
+.main__account-block p {
     font-size: 16px;
-    font-weight: 300;
-    margin: 10px;
-}
-/* Применить стиль к каждой нечетной строке таблицы */
-.table {
-    border-collapse: collapse;
-    width: 100%;
-}
-tr {
-    border: 1px solid #000;
-}
-tr:nth-child(odd) {
-    background-color: #f2f2f2;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
-/* Применить стиль к каждой четной строке таблицы */
-tr:nth-child(even) {
-    background-color: #ccff32;
+
+.main__account-block_buttons_sign-in {
+    background-color: #EC9192;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
 }
 
-/* Применить стиль к первой ячейке каждой строки таблицы */
-td:first-child {
-    font-weight: bold;
+.main__account-block_buttons_sign-in:hover {
+    background-color: #000;
+    transition: background-color 0.3s;
 }
 
-/* Применить стиль к последней ячейке каждой строки таблицы */
-td:last-child {
-    text-align: right;
+.main__account-block_buttons_sign-up {
+    background-color: #EC9192;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+.main__account-block_buttons_sign-up:hover {
+    background-color: #000;
+    transition: background-color 0.3s;
+}
+
 
 /* Footer */
 
 .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
     display: flex;
     align-items: center;
     horiz-align: center;
     justify-content: space-between;
     background-color: #ccff32;
     padding: 10px;
-    height: auto;
 }
 
-.footer__gradient {
-    background: linear-gradient(to top, #ccff32, #fff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 45px;
-}
 
 .footer__social {
     display: grid;
@@ -375,7 +339,7 @@ td:last-child {
     padding: 10px;
     border: 1px solid #000;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer__newsletter input[type="submit"] {

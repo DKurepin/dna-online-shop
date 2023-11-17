@@ -5,6 +5,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Gilda+Display&display=swap" rel="stylesheet">
+    <script src="scripts/loadTime.js"></script>
+    <script src="scripts/autoTopScrollButton.js"></script>
+    <script defer src="scripts/activePage.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="dna clothing online store">
     <meta name="keywords" content="dna, clothing store, design, спб, clothes">
@@ -12,6 +15,9 @@
     <title>dna</title>
 </head>
     <body>
+    <div id="progress">
+        <span id="progress-value">&#8593;</span>
+    </div>
     <header class="header">
             <div class="header__logo">
                 <a href="index.html">
@@ -19,9 +25,9 @@
                 </a>
             </div>
             <nav class="header__navbar">
-                <a href="#" class="header__navbar_about">About</a>
-                <a href="#" class="header__navbar_cart">CART(0)</a>
-                <a href="#" class="header__navbar_account">Account</a>
+                <a href="about.html" class="header__navbar_about">About</a>
+                <a href="cart.html" class="header__navbar_cart">CART(0)</a>
+                <a href="account.html" class="header__navbar_account">Account</a>
             </nav>
     </header>
     <main>
