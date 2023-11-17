@@ -1,3 +1,102 @@
+@media screen and (max-width: 768px) {
+    .header__navbar_about {
+        display: none;
+    }
+
+    .header__navbar_cart {
+        margin-right: 50px;
+    }
+
+    .header__navbar_account {
+        display: none;
+    }
+
+    .main__grid-list_item {
+        width: 50%;
+        height: auto;
+    }
+
+    .main__grid-list_item img {
+        width: 50%;
+        height: auto;
+        position: relative;
+    }
+
+    .footer__newsletter {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .footer__info {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer__social,
+    .footer__newsletter,
+    .footer__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .footer__social a,
+    .footer__info a {
+        font-size: 14px;
+    }
+
+    .footer__newsletter {
+        margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .footer__newsletter form {
+        width: 50%;
+    }
+
+    .footer__newsletter input[type="email"] {
+        width: 100%;
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .footer__newsletter input[type="submit"] {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .footer__info {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__navbar_cart {
+        display: none;
+    }
+
+    .footer__newsletter {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .footer__info {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 10px;
+    }
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -13,8 +112,14 @@ h1, h2, h3, h4, h5, h6 {
 ul, li {
     display: block;
 }
+
 /* Header */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     display: flex;
     align-items: center;
     background-color: #ccff32;
@@ -83,6 +188,7 @@ ul, li {
 }
 
 .main__navbar {
+    margin-top: 95px;
     background: linear-gradient(to bottom, #ccff32, #fff);
     display: flex;
     align-items: center;
@@ -116,6 +222,7 @@ ul, li {
 }
 
 .main__grid-list_item {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,6 +237,7 @@ ul, li {
 }
 
 .main__grid-list_item h3 {
+    flex: 1;
     font-size: 18px;
     font-weight: 400;
     padding: 5px;
@@ -144,6 +252,32 @@ ul, li {
     font-weight: 300;
     margin: 10px;
 }
+/* Применить стиль к каждой нечетной строке таблицы */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+tr {
+    border: 1px solid #000;
+}
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Применить стиль к каждой четной строке таблицы */
+tr:nth-child(even) {
+    background-color: #ccff32;
+}
+
+/* Применить стиль к первой ячейке каждой строки таблицы */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Применить стиль к последней ячейке каждой строки таблицы */
+td:last-child {
+    text-align: right;
+}
 
 /* Footer */
 
@@ -154,6 +288,7 @@ ul, li {
     justify-content: space-between;
     background-color: #ccff32;
     padding: 10px;
+    height: auto;
 }
 
 .footer__gradient {
