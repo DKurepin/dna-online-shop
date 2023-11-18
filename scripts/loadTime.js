@@ -1,14 +1,10 @@
-function calculatePageLoadTime() {
-    const perfData = window.performance.timing;
-    return perfData.domComplete - perfData.domLoading;
-}
+(function () {
+    window.addEventListener("load", () => {
+        let pageLoadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+        let footer = document.querySelector("footer");
+        let footerText = document.createElement("p");
+        footerText.innerHTML = `Page load time: ${pageLoadTime}ms`;
+        footer.appendChild(footerText);
+    });
+})();
 
-function showLoadTime() {
-    const pageLoadTime = calculatePageLoadTime();
-    let footer = document.querySelector("footer");
-    let pageLoadTimeElement = document.createElement("p");
-    pageLoadTimeElement.innerHTML = `Page load time: ${pageLoadTime}ms`;
-    footer.appendChild(pageLoadTimeElement);
-}
-
-window.addEventListener("load", showLoadTime);
