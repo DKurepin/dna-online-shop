@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link rel="stylesheet" href="css/web-form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Gilda+Display&display=swap"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="dna clothing online store account">
+    <meta name="keywords" content="dna, clothing store, design, спб, clothes, web-form test">
+    <meta name="author" content="Daniil Kurepin">
+    <script src="scripts/autoTopScrollButton.js"></script>
+    <script defer src="scripts/activePage.js"></script>
+    <script defer src="scripts/webFormScript.js"></script>
+    <title>web-form</title>
+</head>
+
+<body>
+<div id="progress">
+    <span id="progress-value">&#8593;</span>
+</div>
+<header class="header">
+    <div class="header__logo">
+        <a href="index.html">
+            <h1>dna</h1>
+        </a>
+    </div>
+    <nav class="header__navbar">
+        <a href="about.html" class="header__navbar_about">About</a>
+        <a href="cart.html" class="header__navbar_cart">CART(0)</a>
+        <a href="account.html" class="header__navbar_account">Account</a>
+        <a href="web-form.html" class="header__navbar_webform">Web-Form</a>
+    </nav>
+</header>
+<main>
+    <div class="wrapper">
+        <form id="todoForm" class="task-input" onsubmit="handleFormSubmit(event)">
+            <img src="images/bars-icon.svg" alt="icon">
+            <input type="text" placeholder="Enter your task" />
+        </form>
+        <div class="controls">
+            <div class="filters">
+                <span class="active" id="all">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+        </div>
+        <div id="generatedTasks" class="task-box"></div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer">
+        <div class="footer__social">
+            <a href="#" class="footer__social_instagram">Instagram</a>
+            <a href="#" class="footer__social_github">GitHub</a>
+            <a href="#" class="footer__social_telegram">Telegram</a>
+        </div>
+        <div class="footer__newsletter">
+            <form>
+                <input type="email" placeholder="Enter your e-mail">
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+        <div class="footer__info">
+            <a href="#" class="footer__info_FAQ">FAQ</a>
+            <a href="#" class="footer__info_privacy">Privacy Policy</a>
+            <p>© 2023 dna. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
