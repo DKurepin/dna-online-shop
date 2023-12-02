@@ -88,19 +88,27 @@ clearAll.addEventListener("click", () => {
     showTodo()
 });
 
-taskInput.addEventListener("keyup", e => {
-    let userTask = taskInput.value.trim();
-    if(e.key == "Enter" && userTask) {
-        if(!isEditTask) {
-            todos = !todos ? [] : todos;
-            let taskInfo = {name: userTask, status: "pending"};
-            todos.push(taskInfo);
-        } else {
-            isEditTask = false;
-            todos[editId].name = userTask;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const todoForm = document.getElementById("todoForm");
+    const generatedTasksContainer = document.getElementById("generatedTasks");
+
+    todoForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const userTask = todoForm.querySelector("input").value.trim();
+
+        if (userTask) {
+            if (!isEditTask) {
+                todos = !todos ? [] : todos;
+                let taskInfo = { name: userTask, status: "pending" };
+                todos.push(taskInfo);
+            } else {
+                isEditTask = false;
+                todos[editId].name = userTask;
+            }
+            todoForm.reset();
+            localStorage.setItem("todo-list", JSON.stringify(todos));
+            showTodo(document.querySelector("span.active").id);
         }
-        taskInput.value = "";
-        localStorage.setItem("todo-list", JSON.stringify(todos));
-        showTodo(document.querySelector("span.active").id);
-    }
+    });
 });

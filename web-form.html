@@ -36,10 +36,10 @@
 </header>
 <main>
     <div class="wrapper">
-        <div class="task-input">
+        <form id="todoForm" class="task-input">
             <img src="images/bars-icon.svg" alt="icon">
-            <input type="text" placeholder="Add a new task">
-        </div>
+            <input type="text" placeholder="Enter your task" />
+        </form>
         <div class="controls">
             <div class="filters">
                 <span class="active" id="all">All</span>
@@ -48,7 +48,7 @@
             </div>
             <button class="clear-btn">Clear All</button>
         </div>
-        <ul class="task-box"></ul>
+        <div id="generatedTasks" class="task-box"></div>
     </div>
 </main>
 <footer>
