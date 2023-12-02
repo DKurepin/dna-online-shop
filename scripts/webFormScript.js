@@ -15,6 +15,52 @@ filters.forEach(btn => {
     });
 });
 
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const userTask = taskInput.value.trim();
+
+    if (userTask) {
+        if (!isEditTask) {
+            todos = !todos ? [] : todos;
+            let taskInfo = { name: userTask, status: "pending" };
+            todos.push(taskInfo);
+        } else {
+            isEditTask = false;
+            todos[editId].name = userTask;
+        }
+        todoForm.reset();
+        localStorage.setItem("todo-list", JSON.stringify(todos));
+        showTodo(document.querySelector("span.active").id);
+
+        // Отобразить результаты генерации в новом контейнере
+        showGeneratedTasks();
+    }
+}
+
+// Дополнительная функция для отображения результатов генерации
+function showGeneratedTasks() {
+    let liTag = "";
+    if (todos) {
+        todos.forEach((todo, id) => {
+            let completed = todo.status == "completed" ? "checked" : "";
+            liTag += `<li class="task">
+                        <label for="${id}">
+                            <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${completed}>
+                            <p class="${completed}">${todo.name}</p>
+                        </label>
+                        <div class="settings">
+                            <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
+                            <ul class="task-menu">
+                                <li onclick='editTask(${id}, "${todo.name}")'><i class="uil uil-pen"></i>Edit</li>
+                                <li onclick='deleteTask(${id}, "${document.querySelector("span.active").id}")'><i class="uil uil-trash"></i>Delete</li>
+                            </ul>
+                        </div>
+                    </li>`;
+        });
+    }
+    generatedTasksContainer.innerHTML = liTag || `<span>You don't have any task here</span>`;
+}
+
 function showTodo(filter) {
     let liTag = "";
     if(todos) {
@@ -89,26 +135,27 @@ clearAll.addEventListener("click", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const todoForm = document.getElementById("todoForm");
-    const generatedTasksContainer = document.getElementById("generatedTasks");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const todoForm = document.getElementById("todoForm");
+//     const generatedTasksContainer = document.getElementById("generatedTasks");
+//
+//     todoForm.addEventListener("submit", function (e) {
+//         e.preventDefault();
+//         const userTask = todoForm.querySelector("input").value.trim();
+//
+//         if (userTask) {
+//             if (!isEditTask) {
+//                 todos = !todos ? [] : todos;
+//                 let taskInfo = { name: userTask, status: "pending" };
+//                 todos.push(taskInfo);
+//             } else {
+//                 isEditTask = false;
+//                 todos[editId].name = userTask;
+//             }
+//             todoForm.reset();
+//             localStorage.setItem("todo-list", JSON.stringify(todos));
+//             showTodo(document.querySelector("span.active").id);
+//         }
+//     });
+// });
 
-    todoForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const userTask = todoForm.querySelector("input").value.trim();
-
-        if (userTask) {
-            if (!isEditTask) {
-                todos = !todos ? [] : todos;
-                let taskInfo = { name: userTask, status: "pending" };
-                todos.push(taskInfo);
-            } else {
-                isEditTask = false;
-                todos[editId].name = userTask;
-            }
-            todoForm.reset();
-            localStorage.setItem("todo-list", JSON.stringify(todos));
-            showTodo(document.querySelector("span.active").id);
-        }
-    });
-});

@@ -36,7 +36,7 @@
 </header>
 <main>
     <div class="wrapper">
-        <form id="todoForm" class="task-input">
+        <form id="todoForm" class="task-input" onsubmit="handleFormSubmit(event)">
             <img src="images/bars-icon.svg" alt="icon">
             <input type="text" placeholder="Enter your task" />
         </form>
@@ -51,6 +51,7 @@
         <div id="generatedTasks" class="task-box"></div>
     </div>
 </main>
+
 <footer>
     <div class="footer">
         <div class="footer__social">
