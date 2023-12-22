@@ -12,6 +12,7 @@
     <meta name="author" content="Daniil Kurepin">
     <script src="scripts/autoTopScrollButton.js"></script>
     <script defer src="scripts/activePage.js"></script>
+    <script defer src="scripts/dataScript.js"></script>
 
 
     <title>account</title>
@@ -37,12 +38,39 @@
     <div class="main__account-block">
         <div class="main__account-block_info">
             <h2>Account</h2>
-            <p>Here you can change your personal information</p>
+<!--            <p>Here you can change your personal information</p>-->
         </div>
-        <div class="main__account-block_buttons">
-            <button class="main__account-block_buttons_sign-in">Sign in</button>
-            <button class="main__account-block_buttons_sign-up">Sign up</button>
+        <div class="profile_content">
+            <div class="right_profile_block">
+                <div>
+                    <img id="user-avatar" src="" alt="User Photo" style="width: 10vw">
+                </div>
+            </div>
+            <div class="left_profile_block">
+                <div>
+                    <strong>Id:</strong> <span id="user-id"></span>
+                </div>
+                <div>
+                    <strong>Username: </strong> <span id="user-username"></span>
+                </div>
+                <div>
+                    <strong>Full Name:</strong> <span id="user-name"></span>
+                </div>
+                <div>
+                    <strong>Address:</strong> <span id="user-address"></span>
+                </div>
+                <div>
+                    <strong>Email:</strong> <span id="user-email"></span>
+                </div>
+                <div>
+                    <strong>Phone:</strong> <span id="user-phone"></span>
+                </div>
+            </div>
+            <div id="preloader" class="preloader">
+                <img src="images/__Iphone-spinner-1.gif" alt="Preloader Animation" style="width: 50px">
+            </div>
         </div>
+        <div id="error-message" class="error-message"></div>
     </div>
 
 </main>
